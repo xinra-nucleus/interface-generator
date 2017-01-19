@@ -9,7 +9,7 @@ public final class InterfaceNamingStrategy {
    * Will create the interface {@code Foo} for the annotated class {@code FooImpl}.
    */
   public static final String EXCEPT_LAST_FOUR_CHARS 
-      = "{it -> it.getSimpleName().toString().substring(0, it.getSimpleName().length()-4}";
+      = "{it -> it.getSimpleName().toString().substring(0, it.getSimpleName().length()-4)}";
   
   /**
    * Will create the interface {@code Foo} for the annotated class {@code _Foo}.
