@@ -13,7 +13,7 @@ apply plugin: 'com.novoda.bintray-release'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-version = '0.1.0'
+version = '0.1.1'
 
 jar {
     manifest {
@@ -38,7 +38,7 @@ publish {
     repoName = 'nucleus'
     groupId = 'com.xinra.nucleus'
     artifactId = 'interface-generator'
-    publishVersion = '0.1.0'
+    publishVersion = '0.1.1'
     licences = ['MIT']
     desc = 'An annotation processor that generates interfaces for Java classes'
     website = 'https://github.com/xinra-nucleus/interface-generator'
