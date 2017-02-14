@@ -37,11 +37,11 @@ publish {
     userOrg = 'xinra'
     repoName = 'nucleus'
     groupId = 'com.xinra.nucleus'
-    artifactId = 'interface-generator'
+    artifactId = 'nucleus-interface-generator'
     publishVersion = '0.1.1'
     licences = ['MIT']
     desc = 'An annotation processor that generates interfaces for Java classes'
-    website = 'https://github.com/xinra-nucleus/interface-generator'
+    website = 'https://github.com/xinra-nucleus/nucleus-interface-generator'
 }
 
 task wrapper(type: Wrapper) {
