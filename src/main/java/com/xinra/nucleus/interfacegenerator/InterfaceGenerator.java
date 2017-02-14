@@ -9,6 +9,7 @@ import com.squareup.javapoet.ParameterSpec;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 import com.squareup.javapoet.TypeVariableName;
+import com.xinra.nucleus.apt.NucleusProcessor;
 import groovy.lang.Closure;
 import groovy.lang.GroovyShell;
 import java.io.IOException;
@@ -17,9 +18,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
-import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.ElementKind;
 import javax.lang.model.element.ExecutableElement;
@@ -28,13 +27,12 @@ import javax.lang.model.element.PackageElement;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.DeclaredType;
 import javax.lang.model.type.TypeVariable;
-import javax.tools.Diagnostic;
 
 /**
  * Annotation processor that generates interfaces for classes annotated
  * with {@link GenerateInterface}.
  */
-public class InterfaceGenerator extends AbstractProcessor {
+public class InterfaceGenerator extends NucleusProcessor {
   
   private static final List<String> IGNORED_METHODS = Arrays.asList(
         "<init>", //constructor
@@ -183,11 +181,6 @@ public class InterfaceGenerator extends AbstractProcessor {
     return false;
   }
   
-  private void error(Element element, String message, Object... args) {
-    processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR,
-        String.format(message, args), element);
-  }
-  
   /**
    * Returns the name of the interface that should be generated for a type
    * annotated with {@link GenerateInterface} (see doc of {@link GenerateInterface}).
@@ -221,11 +214,6 @@ public class InterfaceGenerator extends AbstractProcessor {
       return ClassName.get(value.substring(0, lastSeperatorIndex),
           value.substring(lastSeperatorIndex + 1));
     }
-  }
-  
-  @Override
-  public SourceVersion getSupportedSourceVersion() {
-    return SourceVersion.latestSupported();
   }
   
   @Override

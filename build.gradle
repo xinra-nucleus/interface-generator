@@ -24,12 +24,14 @@ jar {
 
 repositories {
     mavenCentral()
+    maven { url "http://dl.bintray.com/xinra/nucleus" }
 }
 
 dependencies {
     compile 'com.squareup:javapoet:1.7.0'
     compile 'com.google.guava:guava:19.0'
     compile 'org.codehaus.groovy:groovy:2.4.7'
+    compile 'com.xinra.nucleus:nucleus-apt:0.1.1'
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
