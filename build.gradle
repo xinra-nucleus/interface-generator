@@ -41,7 +41,7 @@ publish {
     groupId = 'com.xinra.nucleus'
     artifactId = 'nucleus-interface-generator'
     publishVersion = '0.1.1'
-    licences = ['MIT']
+    licences = ['BSD 3-Clause']
     desc = 'An annotation processor that generates interfaces for Java classes'
     website = 'https://github.com/xinra-nucleus/nucleus-interface-generator'
 }
